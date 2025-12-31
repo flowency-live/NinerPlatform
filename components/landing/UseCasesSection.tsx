@@ -43,23 +43,20 @@ const UseCasesSection = () => {
           </p>
         </div>
 
-        <div className="grid md:grid-cols-2 gap-8">
+        <div className="grid md:grid-cols-2 gap-6">
           {useCases.map((useCase) => (
             <div
               key={useCase.title}
-              className="group relative p-8 rounded-2xl border-2 bg-niner-card transition-all duration-300 hover:translate-y-[-4px] overflow-hidden"
+              className="group relative p-8 border-2 bg-niner-card transition-all duration-300 hover:translate-y-[-4px]"
               style={{
                 borderColor: 'hsl(230 60% 45% / 0.35)',
               }}
             >
-              <div
-                className="absolute left-0 top-4 bottom-4 w-1 rounded-full opacity-60 group-hover:opacity-100 transition-opacity"
-                style={{ background: 'hsl(230 60% 45%)' }}
-              />
+              <div className="absolute left-0 top-0 bottom-0 w-1 bg-niner-primary/40 group-hover:bg-niner-primary transition-colors" />
 
               <div className="relative">
                 <div
-                  className="w-14 h-14 rounded-xl flex items-center justify-center mb-5"
+                  className="w-14 h-14 rounded-lg flex items-center justify-center mb-5"
                   style={{
                     background: 'linear-gradient(135deg, hsl(230 60% 45% / 0.15), hsl(190 90% 50% / 0.15))',
                     border: '1px solid hsl(230 60% 45% / 0.25)',
@@ -68,11 +65,11 @@ const UseCasesSection = () => {
                   <useCase.icon className="w-7 h-7 text-niner-accent" />
                 </div>
 
-                <h3 className="text-xl font-semibold text-niner-foreground mb-3">
+                <h3 className="text-xl font-bold text-niner-foreground mb-3 group-hover:text-niner-accent transition-colors">
                   {useCase.title}
                 </h3>
 
-                <p className="text-niner-muted-foreground mb-4">
+                <p className="text-niner-muted-foreground mb-4 leading-relaxed">
                   {useCase.description}
                 </p>
 
@@ -80,7 +77,7 @@ const UseCasesSection = () => {
                   {useCase.examples.map((example) => (
                     <span
                       key={example}
-                      className="text-xs px-3 py-1 rounded-full border text-niner-muted-foreground"
+                      className="text-xs px-3 py-1 border text-niner-muted-foreground"
                       style={{
                         background: 'hsl(230 60% 45% / 0.1)',
                         borderColor: 'hsl(230 60% 45% / 0.2)',
