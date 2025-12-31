@@ -1,0 +1,94 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+:root {
+  --niner-primary: 230 60% 45%;
+  --niner-primary-dark: 230 60% 35%;
+  --niner-primary-light: 230 60% 55%;
+  --niner-accent: 190 90% 50%;
+  --niner-accent-light: 190 90% 65%;
+  --niner-background: 230 40% 12%;
+  --niner-background-light: 230 35% 18%;
+  --niner-card: 230 35% 18%;
+  --niner-foreground: 0 0% 98%;
+  --niner-muted-foreground: 230 15% 60%;
+  --niner-muted: 230 25% 22%;
+}
+
+* {
+  box-sizing: border-box;
+  padding: 0;
+  margin: 0;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  background: hsl(var(--niner-background));
+  color: hsl(var(--niner-foreground));
+  min-height: 100vh;
+}
+
+@layer utilities {
+  .niner-gradient-text {
+    background: linear-gradient(135deg, hsl(190 90% 50%) 0%, hsl(230 60% 55%) 100%);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+  }
+
+  .niner-gradient-bg {
+    background: linear-gradient(135deg, hsl(230 60% 45%) 0%, hsl(190 90% 40%) 100%);
+  }
+
+  .niner-card {
+    background: hsl(var(--niner-card));
+    border: 1px solid hsl(230 60% 45% / 0.2);
+    border-radius: 0.75rem;
+  }
+
+  .niner-card-hover {
+    transition: all 0.3s ease;
+  }
+
+  .niner-card-hover:hover {
+    transform: translateY(-4px);
+    border-color: hsl(230 60% 45% / 0.4);
+    box-shadow: 0 20px 40px -12px hsl(230 60% 45% / 0.25);
+  }
+
+  .niner-glow {
+    box-shadow: 0 0 60px hsl(190 90% 50% / 0.3);
+  }
+}
+
+@layer components {
+  .container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 1.5rem;
+  }
+
+  .section-padding {
+    padding: 5rem 0;
+  }
+
+  .btn-primary {
+    background: linear-gradient(135deg, hsl(230 60% 45%) 0%, hsl(190 90% 45%) 100%);
+    color: white;
+    padding: 0.875rem 2rem;
+    border-radius: 0.5rem;
+    font-weight: 600;
+    transition: all 0.3s ease;
+    border: none;
+    cursor: pointer;
+  }
+
+  .btn-primary:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 10px 30px -8px hsl(230 60% 45% / 0.5);
+  }
+}
