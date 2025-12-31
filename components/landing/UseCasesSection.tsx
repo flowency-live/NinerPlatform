@@ -47,15 +47,24 @@ const UseCasesSection = () => {
           {useCases.map((useCase) => (
             <div
               key={useCase.title}
-              className="niner-card p-8 relative overflow-hidden group"
+              className="group relative p-8 rounded-2xl border-2 bg-niner-card transition-all duration-300 hover:translate-y-[-4px] overflow-hidden"
+              style={{
+                borderColor: 'hsl(230 60% 45% / 0.35)',
+              }}
             >
               <div
-                className="absolute top-0 right-0 w-32 h-32 rounded-full blur-3xl opacity-0 group-hover:opacity-20 transition-opacity"
-                style={{ background: 'hsl(190 90% 50%)' }}
+                className="absolute left-0 top-4 bottom-4 w-1 rounded-full opacity-60 group-hover:opacity-100 transition-opacity"
+                style={{ background: 'hsl(230 60% 45%)' }}
               />
 
               <div className="relative">
-                <div className="w-14 h-14 rounded-xl bg-gradient-to-br from-niner-primary/40 to-niner-accent/30 flex items-center justify-center mb-5">
+                <div
+                  className="w-14 h-14 rounded-xl flex items-center justify-center mb-5"
+                  style={{
+                    background: 'linear-gradient(135deg, hsl(230 60% 45% / 0.15), hsl(190 90% 50% / 0.15))',
+                    border: '1px solid hsl(230 60% 45% / 0.25)',
+                  }}
+                >
                   <useCase.icon className="w-7 h-7 text-niner-accent" />
                 </div>
 
@@ -71,7 +80,11 @@ const UseCasesSection = () => {
                   {useCase.examples.map((example) => (
                     <span
                       key={example}
-                      className="text-xs px-3 py-1 rounded-full bg-niner-muted text-niner-muted-foreground"
+                      className="text-xs px-3 py-1 rounded-full border text-niner-muted-foreground"
+                      style={{
+                        background: 'hsl(230 60% 45% / 0.1)',
+                        borderColor: 'hsl(230 60% 45% / 0.2)',
+                      }}
                     >
                       {example}
                     </span>

@@ -66,21 +66,35 @@ const FeaturesSection = () => {
           {features.map((feature) => (
             <div
               key={feature.title}
-              className="niner-card niner-card-hover p-6 relative group"
+              className="group relative p-7 rounded-2xl border-2 bg-niner-card transition-all duration-300 hover:translate-y-[-4px]"
+              style={{
+                borderColor: 'hsl(230 60% 45% / 0.35)',
+              }}
             >
-              <div className="absolute left-0 top-6 bottom-6 w-1 bg-gradient-to-b from-niner-primary to-niner-accent rounded-r opacity-0 group-hover:opacity-100 transition-opacity" />
+              <div
+                className="absolute left-0 top-4 bottom-4 w-1 rounded-full opacity-60 group-hover:opacity-100 transition-opacity"
+                style={{ background: 'hsl(230 60% 45%)' }}
+              />
 
-              <div className="w-12 h-12 rounded-lg bg-gradient-to-br from-niner-primary/30 to-niner-accent/20 flex items-center justify-center mb-4">
-                <feature.icon className="w-6 h-6 text-niner-accent" />
+              <div className="flex items-start gap-4">
+                <div
+                  className="w-12 h-12 rounded-xl flex items-center justify-center flex-shrink-0"
+                  style={{
+                    background: 'linear-gradient(135deg, hsl(230 60% 45% / 0.15), hsl(190 90% 50% / 0.15))',
+                    border: '1px solid hsl(230 60% 45% / 0.25)',
+                  }}
+                >
+                  <feature.icon className="w-6 h-6 text-niner-accent" />
+                </div>
+                <div>
+                  <h3 className="text-xl font-semibold text-niner-foreground mb-2">
+                    {feature.title}
+                  </h3>
+                  <p className="text-niner-muted-foreground">
+                    {feature.description}
+                  </p>
+                </div>
               </div>
-
-              <h3 className="text-lg font-semibold text-niner-foreground mb-2">
-                {feature.title}
-              </h3>
-
-              <p className="text-sm text-niner-muted-foreground">
-                {feature.description}
-              </p>
             </div>
           ))}
         </div>
